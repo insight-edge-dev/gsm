@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { Airplay, Award, Building, ShieldCheck } from 'lucide-react'
 
 interface Badge {
   abbr: string
@@ -37,7 +38,15 @@ export default function CertificationSection({
               {badges.map((b) => (
                 <div key={b.abbr} className="flex flex-col items-center gap-3">
                   <div className="flex h-16 w-16 items-center justify-center rounded-full border border-slate-200 bg-white shadow-sm">
-                    <span className="text-xs font-black text-[#1a3b5b]">{b.abbr}</span>
+                    {b.abbr === 'AAI' ? (
+                      <Airplay className="h-6 w-6 text-[#1a3b5b]" aria-hidden="true" />
+                    ) : b.abbr === 'MES' ? (
+                      <ShieldCheck className="h-6 w-6 text-[#1a3b5b]" aria-hidden="true" />
+                    ) : b.abbr === 'CPWD' ? (
+                      <Building className="h-6 w-6 text-[#1a3b5b]" aria-hidden="true" />
+                    ) : (
+                      <Award className="h-6 w-6 text-[#1a3b5b]" aria-hidden="true" />
+                    )}
                   </div>
                   <span className="text-center text-xs font-semibold text-slate-500">{b.label}</span>
                 </div>

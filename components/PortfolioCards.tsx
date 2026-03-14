@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { ExternalLink } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -67,10 +68,10 @@ export default function PortfolioCards({ heading, subheading, cards }: Portfolio
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{card.description}</p>
                 <Link
                   href={card.href}
-                  className="mt-4 inline-flex items-center text-sm font-bold text-[#1a3b5b] transition-colors hover:text-[#1a3b5b]/80"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[#1a3b5b] transition-colors hover:text-[#1a3b5b]/80"
                 >
-                  Learn more{' '}
-                  <span className="material-symbols-outlined ml-1 text-xs">open_in_new</span>
+                  <span>Learn more</span>
+                  <ExternalLink className="h-4 w-4" aria-hidden="true" />
                 </Link>
               </div>
             </motion.div>

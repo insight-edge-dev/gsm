@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { School, Users } from 'lucide-react'
 import Image from 'next/image'
 
 interface ImpactItem {
@@ -38,10 +39,10 @@ export default function ImpactSection({
           transition={{ duration: 0.5 }}
         >
           <div className="relative h-64 w-full overflow-hidden rounded-xl shadow-lg">
-            <Image src={image1Src} alt="Community Impact" fill className="object-cover" />
+            <Image src={image1Src} alt="Community Impact" fill className="object-fill" />
           </div>
           <div className="relative mt-8 h-64 w-full overflow-hidden rounded-xl shadow-lg">
-            <Image src={image2Src} alt="Education Impact" fill className="object-cover" />
+            <Image src={image2Src} alt="Education Impact" fill className="object-fill" />
           </div>
         </motion.div>
 
@@ -61,7 +62,11 @@ export default function ImpactSection({
             {items.map((item) => (
               <div key={item.heading} className="flex items-start gap-4">
                 <div className="mt-1 text-[#1a3b5b]">
-                  <span className="material-symbols-outlined">{item.icon}</span>
+                  {item.icon === 'school' ? (
+                    <School className="h-8 w-8" aria-hidden="true" />
+                  ) : (
+                    <Users className="h-8 w-8" aria-hidden="true" />
+                  )}
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-slate-900">{item.heading}</h4>

@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -25,10 +26,9 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-20">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
-          <div className="flex items-center justify-center rounded bg-[#1a3b5b] p-2 text-white">
-            <span className="material-symbols-outlined">architecture</span>
+          <div className="flex items-center justify-center ">
+            <Image src="/images/logo.png" alt="GSM Group logo" width={80} height={80} className="block" />
           </div>
-          <span className="text-xl font-bold tracking-tight text-slate-900">GSM Group</span>
         </Link>
 
         {/* Desktop Nav */}
