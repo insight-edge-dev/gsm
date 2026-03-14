@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1a3b5b",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#0f172a",
+                        "slate-900": "#1e293b",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header/Nav -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 px-6 md:px-20 py-4 bg-white sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<div class="text-primary size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.8261 17.4264C16.7203 18.1174 20.2244 18.5217 24 18.5217C27.7756 18.5217 31.2797 18.1174 34.1739 17.4264C36.9144 16.7722 39.9967 15.2331 41.3563 14.1648L24.8486 40.6391C24.4571 41.267 23.5429 41.267 23.1514 40.6391L6.64374 14.1648C8.00331 15.2331 11.0856 16.7722 13.8261 17.4264Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M39.998 12.236C39.9944 12.2537 39.9875 12.2845 39.9748 12.3294C39.9436 12.4399 39.8949 12.5741 39.8346 12.7175C39.8168 12.7597 39.7989 12.8007 39.7813 12.8398C38.5103 13.7113 35.9788 14.9393 33.7095 15.4811C30.9875 16.131 27.6413 16.5217 24 16.5217C20.3587 16.5217 17.0125 16.131 14.2905 15.4811C12.0012 14.9346 9.44505 13.6897 8.18538 12.8168C8.17384 12.7925 8.16216 12.767 8.15052 12.7408C8.09919 12.6249 8.05721 12.5114 8.02977 12.411C8.00356 12.3152 8.00039 12.2667 8.00004 12.2612C8.00004 12.261 8 12.2607 8.00004 12.2612C8.00004 12.2359 8.0104 11.9233 8.68485 11.3686C9.34546 10.8254 10.4222 10.2469 11.9291 9.72276C14.9242 8.68098 19.1919 8 24 8C28.8081 8 33.0758 8.68098 36.0709 9.72276C37.5778 10.2469 38.6545 10.8254 39.3151 11.3686C39.9006 11.8501 39.9857 12.1489 39.998 12.236ZM4.95178 15.2312L21.4543 41.6973C22.6288 43.5809 25.3712 43.5809 26.5457 41.6973L43.0534 15.223C43.0709 15.1948 43.0878 15.1662 43.104 15.1371L41.3563 14.1648C43.104 15.1371 43.1038 15.1374 43.104 15.1371L43.1051 15.135L43.1065 15.1325L43.1101 15.1261L43.1199 15.1082C43.1276 15.094 43.1377 15.0754 43.1497 15.0527C43.1738 15.0075 43.2062 14.9455 43.244 14.8701C43.319 14.7208 43.4196 14.511 43.5217 14.2683C43.6901 13.8679 44 13.0689 44 12.2609C44 10.5573 43.003 9.22254 41.8558 8.2791C40.6947 7.32427 39.1354 6.55361 37.385 5.94477C33.8654 4.72057 29.133 4 24 4C18.867 4 14.1346 4.72057 10.615 5.94478C8.86463 6.55361 7.30529 7.32428 6.14419 8.27911C4.99695 9.22255 3.99999 10.5573 3.99999 12.2609C3.99999 13.1275 4.29264 13.9078 4.49321 14.3607C4.60375 14.6102 4.71348 14.8196 4.79687 14.9689C4.83898 15.0444 4.87547 15.1065 4.9035 15.1529C4.91754 15.1762 4.92954 15.1957 4.93916 15.2111L4.94662 15.223L4.95178 15.2312ZM35.9868 18.996L24 38.22L12.0131 18.996C12.4661 19.1391 12.9179 19.2658 13.3617 19.3718C16.4281 20.1039 20.0901 20.5217 24 20.5217C27.9099 20.5217 31.5719 20.1039 34.6383 19.3718C35.082 19.2658 35.5339 19.1391 35.9868 18.996Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-slate-900 text-lg font-bold leading-tight tracking-[-0.015em]">GSM Group</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-slate-600 text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary pb-1" href="#">About</a>
+<a class="text-slate-600 text-sm font-medium hover:text-primary transition-colors" href="#">Business</a>
+<a class="text-slate-600 text-sm font-medium hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg font-bold text-sm tracking-wide transition-all">
+                    Connect
+                </button>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative w-full h-[500px] flex items-center justify-center bg-cover bg-center overflow-hidden" data-alt="Industrial steel and glass architecture with dark overlay" style="background-image: linear-gradient(to bottom, rgba(26, 59, 91, 0.8), rgba(26, 59, 91, 0.95)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBqmg8dfmAtWlCLNroR3DCKbg9K4V4ZejW2nC6jnKnoo4CD_Thb5eRw4Aa9ifbpSTIKcpaGx5Baw02v11SEhj7ZbZ2EHGoZ-5dlhK2pSNWUCGu1qvGgXPeR3p8BmIe9aUVf0W1mHpljHE8ePk8ssLQNCMm76sKnIbbkcUcbMfhTX91uAAz6guY-aAs_im5wYClDYo3FcWPKbuRHM3HLL-y-GtBiHoOq1vRCMpgT8dleQNA_AXOBNAyLY1otFfRf5RPpP4YRAEmoyJet');">
+<div class="max-w-[1200px] px-6 text-center z-10">
+<h1 class="text-white text-5xl md:text-7xl font-black leading-tight tracking-tight mb-6">
+                        The Intersection of <br/>Tradition &amp; Technology
+                    </h1>
+<p class="text-slate-200 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                        Honoring our roots in global trade while driving the digital transformation of industrial energy and logistics.
+                    </p>
+</div>
+</section>
+<!-- Mission, Vision, Values -->
+<section class="py-20 px-6 md:px-20 bg-slate-50">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="flex flex-col gap-4 p-8 bg-white rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary text-4xl">rocket_launch</span>
+<h3 class="text-2xl font-bold text-slate-900">Our Mission</h3>
+<p class="text-slate-600 leading-relaxed">
+                            To empower global industries by providing sustainable energy solutions and cutting-edge logistics technology that bridges legacy operations with future efficiency.
+                        </p>
+</div>
+<div class="flex flex-col gap-4 p-8 bg-white rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary text-4xl">visibility</span>
+<h3 class="text-2xl font-bold text-slate-900">Our Vision</h3>
+<p class="text-slate-600 leading-relaxed">
+                            To be the global benchmark for diversified industrial conglomerates, recognized for integrating ethical resource trading with high-velocity technological innovation.
+                        </p>
+</div>
+<div class="flex flex-col gap-4 p-8 bg-white rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary text-4xl">verified_user</span>
+<h3 class="text-2xl font-bold text-slate-900">Our Values</h3>
+<p class="text-slate-600 leading-relaxed">
+                            Integrity in every deal, innovation in every process, and excellence in every partnership. We value our heritage as much as our progress.
+                        </p>
+</div>
+</div>
+</section>
+<!-- History Section -->
+<section class="py-20 px-6 md:px-20 bg-white">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="text-3xl md:text-4xl font-bold mb-6 text-slate-900">Our Legacy in Coal</h2>
+<p class="text-slate-600 text-lg leading-relaxed mb-6">
+                            GSM Group was born from the rugged terrains of the energy sector. Starting as a specialized coal trading enterprise, we mastered the complexities of global supply chains and bulk commodity logistics. 
+                        </p>
+<p class="text-slate-600 text-lg leading-relaxed">
+                            This foundational experience taught us the value of reliability, precise timing, and international market dynamics—principles that continue to guide us as we venture into AI-driven logistics and renewable energy infrastructures.
+                        </p>
+</div>
+<div class="relative h-[400px] rounded-xl overflow-hidden shadow-xl" data-alt="Monochrome close up of industrial factory gears" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCm028GdvwVrE02ljCBZQjl5RjyTpceq6e4h921087Qlv1YzHL6EucKDR2Sc8fCUEQvg1c2uleUW_Wl9m3Xm1Vl5Bjx34FpIR_9hIw4TuqCOXslzVuWRaReVv9betA0jE2eVtTzg7o6xoQuyz5YtaVER_lrHym_9sD1Dnz4mFVz0aS-F_fK4kqlRgYvm1gvLwf-pEz222Mv6wGHjdjpQpstvX_s6D3eDph4IyEQmEovSY24YEyV2NtX44_aNFs_B0C9htTchV_8Vu9k'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-primary/10"></div>
+</div>
+</div>
+</section>
+<!-- Timeline Section -->
+<section class="py-24 px-6 md:px-20 bg-slate-50">
+<div class="max-w-[800px] mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-slate-900">Evolutionary Milestones</h2>
+<p class="text-slate-600 mt-4">A journey from traditional trading to global tech leadership.</p>
+</div>
+<div class="relative space-y-12">
+<!-- Vertical Line -->
+<div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-slate-300 -translate-x-1/2"></div>
+<!-- Item 1: 2000 -->
+<div class="relative flex flex-col md:flex-row md:justify-between items-start md:items-center w-full">
+<div class="md:w-5/12 order-2 md:order-1 mt-4 md:mt-0 md:text-right">
+<h4 class="text-xl font-bold text-primary">Founding &amp; Coal Trading Genesis</h4>
+<p class="text-slate-600 mt-2">Established as a premier regional energy resource partner with a focus on bulk coal supply chains.</p>
+</div>
+<div class="absolute left-4 md:left-1/2 w-8 h-8 bg-primary rounded-full -translate-x-1/2 flex items-center justify-center z-10 border-4 border-slate-50">
+<span class="material-symbols-outlined text-white text-xs">history</span>
+</div>
+<div class="md:w-5/12 order-1 md:order-2 pl-12 md:pl-0">
+<span class="text-3xl font-black text-slate-200">2000</span>
+</div>
+</div>
+<!-- Item 2: 2008 -->
+<div class="relative flex flex-col md:flex-row md:justify-between items-start md:items-center w-full">
+<div class="md:w-5/12 order-1 pl-12 md:pl-0 md:text-right">
+<span class="text-3xl font-black text-slate-200">2008</span>
+</div>
+<div class="absolute left-4 md:left-1/2 w-8 h-8 bg-primary rounded-full -translate-x-1/2 flex items-center justify-center z-10 border-4 border-slate-50">
+<span class="material-symbols-outlined text-white text-xs">account_balance_wallet</span>
+</div>
+<div class="md:w-5/12 order-2 mt-4 md:mt-0">
+<h4 class="text-xl font-bold text-primary">Strategic Diversification</h4>
+<p class="text-slate-600 mt-2">Expanding into logistics infrastructure and warehouse management systems to support growing trade volumes.</p>
+</div>
+</div>
+<!-- Item 3: 2014 -->
+<div class="relative flex flex-col md:flex-row md:justify-between items-start md:items-center w-full">
+<div class="md:w-5/12 order-2 md:order-1 mt-4 md:mt-0 md:text-right">
+<h4 class="text-xl font-bold text-primary">Technological Integration</h4>
+<p class="text-slate-600 mt-2">First phase of digital transformation. Implementing SAP systems and IoT monitoring across fleet operations.</p>
+</div>
+<div class="absolute left-4 md:left-1/2 w-8 h-8 bg-primary rounded-full -translate-x-1/2 flex items-center justify-center z-10 border-4 border-slate-50">
+<span class="material-symbols-outlined text-white text-xs">memory</span>
+</div>
+<div class="md:w-5/12 order-1 md:order-2 pl-12 md:pl-0">
+<span class="text-3xl font-black text-slate-200">2014</span>
+</div>
+</div>
+<!-- Item 4: 2018 -->
+<div class="relative flex flex-col md:flex-row md:justify-between items-start md:items-center w-full">
+<div class="md:w-5/12 order-1 pl-12 md:pl-0 md:text-right">
+<span class="text-3xl font-black text-slate-200">2018</span>
+</div>
+<div class="absolute left-4 md:left-1/2 w-8 h-8 bg-primary rounded-full -translate-x-1/2 flex items-center justify-center z-10 border-4 border-slate-50">
+<span class="material-symbols-outlined text-white text-xs">public</span>
+</div>
+<div class="md:w-5/12 order-2 mt-4 md:mt-0">
+<h4 class="text-xl font-bold text-primary">Global Expansion</h4>
+<p class="text-slate-600 mt-2">Established headquarters in three continents, transitioning into a full-scale tech-forward industrial conglomerate.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-20 px-6 md:px-20 bg-white">
+<div class="max-w-[1200px] mx-auto bg-primary rounded-xl p-12 text-center text-white relative overflow-hidden shadow-2xl">
+<div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+<h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to work with the future?</h2>
+<p class="text-slate-200 text-lg mb-8 max-w-xl mx-auto">Discover how our unique blend of tradition and technology can propel your business forward.</p>
+<div class="flex flex-wrap justify-center gap-4 relative z-10">
+<button class="bg-white text-primary px-8 py-3 rounded-lg font-bold hover:bg-slate-100 transition-colors">Contact Our Team</button>
+<button class="bg-primary/20 border border-white/30 text-white px-8 py-3 rounded-lg font-bold hover:bg-primary/40 transition-colors">View Our Portfolio</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="border-t border-slate-200 py-12 px-6 md:px-20 bg-white">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1">
+<div class="flex items-center gap-2 mb-4">
+<div class="text-primary size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.8261 17.4264C16.7203 18.1174 20.2244 18.5217 24 18.5217C27.7756 18.5217 31.2797 18.1174 34.1739 17.4264C36.9144 16.7722 39.9967 15.2331 41.3563 14.1648L24.8486 40.6391C24.4571 41.267 23.5429 41.267 23.1514 40.6391L6.64374 14.1648C8.00331 15.2331 11.0856 16.7722 13.8261 17.4264Z" fill="currentColor"></path>
+</svg>
+</div>
+<span class="text-lg font-bold text-slate-900">GSM Group</span>
+</div>
+<p class="text-slate-500 text-sm leading-relaxed">
+                        Bridging tradition and technology since 2000. Leading the evolution of global trade.
+                    </p>
+</div>
+<div>
+<h5 class="font-bold mb-4 text-slate-900">Business</h5>
+<ul class="text-slate-500 text-sm space-y-2">
+<li><a class="hover:text-primary transition-colors" href="#">Coal Trading</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Logistics Tech</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Renewable Energy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Global Supply</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-4 text-slate-900">Company</h5>
+<ul class="text-slate-500 text-sm space-y-2">
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Our Legacy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Leadership</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-4 text-slate-900">Support</h5>
+<ul class="text-slate-500 text-sm space-y-2">
+<li><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto mt-12 pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+<p>© 2024 GSM Group Holdings. All rights reserved.</p>
+<div class="flex gap-4 items-center">
+<span class="material-symbols-outlined text-sm">language</span>
+<span>English (Global)</span>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
