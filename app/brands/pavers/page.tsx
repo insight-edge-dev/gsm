@@ -3,13 +3,16 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import { ArrowRight, CheckCircle, Leaf, School, ShieldCheck, Users } from 'lucide-react'
+import { link } from 'fs'
 
 const products = [
   {
     title: 'Concrete Pavers',
     description: 'Durable, interlocking paving blocks available in various patterns and colors. Engineered for heavy-duty traffic and aesthetic appeal.',
     features: ['High Load Bearing', 'Weather Resistant'],
-    cta: 'Product Specs',
+    cta: 'Enquire Now',
+    link: '/contact',
     img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDQJF5pxbmpEOfEwMs72zthK70xg4KjIal5-D0LiB-Zog0fwatJSPf4QchEyVEf9Wgo8jdMxyhRzTFMDmThsAjS_WLrCXnKKZ9CC71Iegc3BLDn4cwI_TFi9IlXIGeTXNPGxzgNutERmdtwAoBVvowAM93ZmK-7_zInJRHxQAJW7XU5IKFx4JSUitEOatKlYPOb8RYMD6ZsH5clp5GrtnO0Z9qsLKav7g7nddOMa53x2WOWmJ5_bS2JZbj8Z66ZXgChyR6lSvTjom7i',
   },
   {
@@ -17,6 +20,7 @@ const products = [
     description: 'Precisely crushed aggregates for concrete mixing and road construction. Available in all standard sizes (10mm, 20mm, 40mm).',
     features: ['Uniform Gradation', 'Premium Basalt Source'],
     cta: 'Get Quote',
+    link: '/contact',
     img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAR8xXyxENNjuGnfaNB5QH1oDZ6dTysgnF2NPyCX8ysqy64NtLsPI-tzM0w4591GDCrbPWulafwCaYx3ibTgjhQ-CBILmkHF2yLbpBa_mkcEkORbMAOQB9GnxnnfbbtGGeltdAz_-9QfLAGy5OQ0jVWv9TpLAdR426pp050vKPxaoBwqByaO4K3kCz8TT2GoVW-9_LDnm6NvYjhU4E4TOFtqNUAzPWtinGj4i5iyEbbHBGl3SlReAhyMntywDxdec7pTa5hBh0bGBi7',
   },
   {
@@ -24,15 +28,16 @@ const products = [
     description: 'Premium quality stone dust for leveling, sub-base material, and as a superior alternative to river sand in various mixtures.',
     features: ['Optimal Compaction', 'Silt-Free Quality'],
     cta: 'Order Info',
+    link: '/contact',
     img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAH6onGqm57WqqL4QwTICnCLuuTXBZJ7xg67YwYeizp9BOJpNvFxf50A3i5xdsxR-9mA8VyaJsf4YobVAafXTO0qLBLZobe79kb6XX4Ml6XyXuvhav1J1TzXp9-cGwXsgJAUDDO8_q0BDrAPtfMWJe5fkihlS3fTS_yospthN54teFt0cRsSgFrDoyaKSVi5leIH9ric-vlP9jAoqMzl2xdpPANXSvKu7ztOyyfKwbORJUwL_jdJrqGDOwCT2WhMNdSkkeXVNe4y-PS',
   },
 ]
 
 const impactCards = [
-  { icon: 'diversity_3', title: 'Local Employment', body: 'Prioritizing hiring from surrounding villages to foster local economic stability.' },
-  { icon: 'school', title: 'Skill Development', body: 'Continuous training programs for technical skills in stone processing and logistics.' },
-  { icon: 'eco', title: 'Sustainable Mining', body: 'Following strict environmental protocols to minimize ecological footprint.' },
-  { icon: 'health_and_safety', title: 'Community Welfare', body: 'Supporting local health initiatives and educational infrastructure.' },
+  { icon: Users, title: 'Local Employment', body: 'Prioritizing hiring from surrounding villages to foster local economic stability.' },
+  { icon: School, title: 'Skill Development', body: 'Continuous training programs for technical skills in stone processing and logistics.' },
+  { icon: Leaf, title: 'Sustainable Mining', body: 'Following strict environmental protocols to minimize ecological footprint.' },
+  { icon: ShieldCheck, title: 'Community Welfare', body: 'Supporting local health initiatives and educational infrastructure.' },
 ]
 
 export default function PaversPage() {
@@ -42,8 +47,7 @@ export default function PaversPage() {
       <section className="relative h-[600px] w-full overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAmNmx7lmymJhhAPhThUuAItYiLLaWCUr2wJvOM0K-FMS2PCrbOCqQZ9HquC2EgvR23UuyDb-SBSBet19okdWZIpfpgrM3HloevSz3J0bNAqHTPmidDF4vxNB6rnsfzoOCYrE6-COsqHHqWfSCjg3FMg7Hw0yvM_fZbAFkqV1vX0D52EJdBkEEodCphfplCUFrxp2XHTs6mi1kkNR9-OZaoFSO2DZ3dFajISIqHvbrLe7dO-TjmPiqoyDjzwsQYcatQqtw9p19HVlFc')" }}
-        >
+          style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAmNmx7lmymJhhAPhThUuAItYiLLaWCUr2wJvOM0K-FMS2PCrbOCqQZ9HquC2EgvR23UuyDb-SBSBet19okdWZIpfpgrM3HloevSz3J0bNAqHTPmidDF4vxNB6rnsfzoOCYrE6-COsqHHqWfSCjg3FMg7Hw0yvM_fZbAFkqV1vX0D52EJdBkEEodCphfplCUFrxp2XHTs6mi1kkNR9-OZaoFSO2DZ3dFajISIqHvbrLe7dO-TjmPiqoyDjzwsQYcatQqtw9p19HVlFc')" }} >
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent" />
         </div>
         <div className="relative flex h-full max-w-7xl flex-col justify-end px-6 pb-16 mx-auto">
@@ -58,11 +62,11 @@ export default function PaversPage() {
               Setting the benchmark in high-quality infrastructure solutions. Leading the way in sustainable stone processing and paving excellence for Northeast India.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="#products" className="flex items-center gap-2 rounded-xl bg-[#1a3b5b] px-8 py-4 font-bold text-white transition-all hover:-translate-y-0.5">
-                View Products <span className="material-symbols-outlined">arrow_forward</span>
+              <Link href="/contact" className="flex items-center gap-2 rounded-xl bg-[#1a3b5b] px-8 py-4 font-bold text-white transition-all hover:-translate-y-0.5">
+                Get In Touch <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
-              <Link href="#impact" className="rounded-xl border border-white/20 bg-white/10 px-8 py-4 font-bold text-white backdrop-blur-md transition-all hover:bg-white/20">
-                Our Impact
+              <Link href="/portfolio" className="rounded-xl border border-white/20 bg-white/10 px-8 py-4 font-bold text-white backdrop-blur-md transition-all hover:bg-white/20">
+                Our Portfolio
               </Link>
             </div>
           </motion.div>
@@ -97,12 +101,16 @@ export default function PaversPage() {
                 <ul className="mb-8 space-y-2">
                   {p.features.map((f) => (
                     <li key={f} className="flex items-center gap-2 text-sm font-medium text-slate-700">
-                      <span className="material-symbols-outlined text-sm text-[#1a3b5b]">check_circle</span>{f}
+                      <CheckCircle className="h-4 w-4 text-[#1a3b5b]" aria-hidden="true" />{f}
                     </li>
                   ))}
                 </ul>
-                <button className="w-full rounded-lg border border-[#1a3b5b] py-3 font-bold text-[#1a3b5b] transition-all hover:bg-[#1a3b5b] hover:text-white">{p.cta}</button>
-              </div>
+                <Link
+                  href={p.link}
+                  className="block w-full rounded-lg border border-[#1a3b5b] py-3 text-center font-bold text-[#1a3b5b] transition-all hover:bg-[#1a3b5b] hover:text-white">
+                  {p.cta}
+                </Link>
+                </div>
             </motion.div>
           ))}
         </div>
@@ -146,7 +154,7 @@ export default function PaversPage() {
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 {impactCards.map((c) => (
                   <div key={c.title} className="rounded-xl border border-slate-200 bg-white p-6">
-                    <span className="material-symbols-outlined mb-4 text-3xl text-[#1a3b5b]">{c.icon}</span>
+                    <c.icon className="mb-4 h-10 w-10 text-[#1a3b5b]" aria-hidden="true" />
                     <h4 className="mb-2 font-bold text-slate-900">{c.title}</h4>
                     <p className="text-sm text-slate-500">{c.body}</p>
                   </div>

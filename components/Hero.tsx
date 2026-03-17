@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -60,7 +61,7 @@ export default function Hero({
                   className="flex items-center gap-2 rounded-xl bg-[#1a3b5b] px-8 py-4 font-bold text-white shadow-lg shadow-[#1a3b5b]/20 transition-all hover:bg-[#1a3b5b]/90"
                 >
                   {primaryCta.label}
-                  <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               )}
               {secondaryCta && (

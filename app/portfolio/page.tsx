@@ -2,12 +2,13 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { ArrowRight, Building2, Factory, Hammer, Home, Layers } from 'lucide-react'
 
 const companies = [
   {
     name: 'George S Marak Coal Syndicate',
     category: 'Resources',
-    icon: 'manufacturing',
+    icon: Factory,
     description:
       'Strategic resource management and supply chain excellence. We are the region\'s leading providers of industrial coal, powering manufacturing plants and energy sectors with reliability.',
     cta: 'View Operations',
@@ -19,7 +20,7 @@ const companies = [
   {
     name: 'Marak Pavers & Stone Industries',
     category: 'Manufacturing',
-    icon: 'layers',
+    icon: Layers,
     description:
       'Precision-engineered stone products and high-durability interlocking pavers. Our crushing and casting plants produce materials for civil landscaping and urban infrastructure.',
     cta: 'Explore Products',
@@ -31,11 +32,11 @@ const companies = [
   {
     name: 'George S Marak Construction',
     category: 'Infrastructure',
-    icon: 'architecture',
+    icon: Building2,
     description:
       'Pioneering civil engineering and large-scale road construction. With a fleet of modern heavy machinery and a commitment to quality, we deliver critical infrastructure projects.',
     cta: 'Recent Projects',
-    href: '/portfolio',
+    href: '/brands/construction',
     image:
       'https://lh3.googleusercontent.com/aida-public/AB6AXuBHvzlB-cqtlD3bLbIs-AmmYUF2e0V_1IetiCOY5hIPWMU9Ik4nQJ5KqSmxP9H-k8-X8e3ANUdTzfen-x-MqnS2-Uo2CKudKvVfEPmfK5dR-yRzMTwtDCDUQ8gtq-pLwno_3zHzgQh36kwX7J5zlmUhjik5mXjCa55Me6v272JkloywbB7dpoKtFATKm_pbOYCELKy42hQdH3zhdtWNmPF0aDLF9a0saNpIGsnhVfpiw4Z2YNGsv76oErhjN4Aqv_q52CD-FF9kiVjo',
     reverse: false,
@@ -43,7 +44,7 @@ const companies = [
   {
     name: 'Power Roofings',
     category: 'Manufacturing',
-    icon: 'roofing',
+    icon: Home,
     description:
       'Premium PPGI & PPGL roofing sheets engineered for durable, weather-resistant roofing solutions for industrial, commercial, and residential applications. MES & CPWD approved.',
     cta: 'View Products',
@@ -55,7 +56,7 @@ const companies = [
   {
     name: 'Powerlite AAC',
     category: 'Advanced Materials',
-    icon: 'construction',
+    icon: Hammer,
     description:
       'Engineered for high-performance sustainable construction. Lightweight AAC blocks with superior thermal insulation, fire resistance, and government approvals from AAI, MES, and CPWD.',
     cta: 'Technical Specs',
@@ -107,7 +108,7 @@ export default function PortfolioPage() {
               {/* Content */}
               <div className="flex flex-1 flex-col justify-center gap-4 p-8 md:p-12">
                 <div className="mb-2 flex items-center gap-2 text-[#1a3b5b]/70">
-                  <span className="material-symbols-outlined text-sm">{c.icon}</span>
+                  <c.icon className="h-4 w-4" aria-hidden="true" />
                   <span className="text-xs font-bold uppercase tracking-widest">{c.category}</span>
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 md:text-3xl">{c.name}</h3>
@@ -118,7 +119,7 @@ export default function PortfolioPage() {
                     className="inline-flex items-center gap-2 font-bold text-[#1a3b5b] transition-transform group-hover:translate-x-2"
                   >
                     {c.cta}
-                    <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </Link>
                 </div>
               </div>

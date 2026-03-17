@@ -1,3 +1,4 @@
+import { Building, Mail, Phone } from 'lucide-react'
 import Link from 'next/link'
 
 const divisions = [
@@ -24,7 +25,7 @@ export default function Footer() {
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-2">
               <div className="rounded bg-[#1a3b5b] p-1.5 text-white">
-                <span className="material-symbols-outlined text-base">architecture</span>
+                <Building className="h-5 w-5" aria-hidden="true" />
               </div>
               <span className="text-xl font-bold text-white">GSM Group</span>
             </div>
@@ -63,7 +64,7 @@ export default function Footer() {
 
           {/* Connect */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-widest text-white">Connect</h4>
+            <h4 className="text-sm font-bold uppercase tracking-widest text-white">Locate Us</h4>
             <p className="mt-6 text-sm text-slate-400">
               GSM Tower, Police Bazar,<br />
               Shillong, Meghalaya 793001<br />
@@ -75,14 +76,14 @@ export default function Footer() {
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 bg-slate-800 text-slate-300 transition-all hover:border-[#1a3b5b] hover:text-[#1a3b5b]"
                 aria-label="Email"
               >
-                <span className="material-symbols-outlined text-lg">mail</span>
+                <Mail className="h-5 w-5" aria-hidden="true" />
               </Link>
               <Link
                 href="/contact"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 bg-slate-800 text-slate-300 transition-all hover:border-[#1a3b5b] hover:text-[#1a3b5b]"
                 aria-label="Phone"
               >
-                <span className="material-symbols-outlined text-lg">call</span>
+                <Phone className="h-5 w-5" aria-hidden="true" />
               </Link>
             </div>
           </div>
@@ -90,7 +91,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-8 md:flex-row">
-          <p className="text-xs text-slate-500">© 2024 GSM Group. All rights reserved.</p>
+          <p className="text-xs text-slate-500">© 2026 GSM Group. All rights reserved.</p>
           <div className="flex gap-6 text-xs text-slate-500">
             <a href="#" className="hover:text-slate-300">Privacy Policy</a>
             <a href="#" className="hover:text-slate-300">Terms of Service</a>
