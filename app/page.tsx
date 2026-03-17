@@ -59,8 +59,11 @@ export default function HomePage() {
         subtitle="From coal mining to modern infrastructure, the GSM Group delivers high-quality, cost-effective products and services driven by innovation and integrity."
         primaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
         secondaryCta={{ label: 'Contact Us', href: '/contact' }}
-        imageSrc="/images/home/hero.jpeg"
-        imageAlt="GSM Group Project Site"
+        images={[
+          { src: '/images/brands/hero1.jpg', alt: 'GSM Group Project Site' },
+          { src: '/images/home/about.jpeg', alt: 'Coal mining operation' },
+          { src: '/images/home/hero.jpeg', alt: 'Paver manufacturing plant' },
+        ]}
         stats={[
           { label: 'Founded', value: '2000' },
           { label: 'Workforce', value: '96+' },

@@ -5,6 +5,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Menu, X } from 'lucide-react'
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -23,7 +24,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
           <div className="flex items-center justify-center ">
-            <Image src="/images/logo.png" alt="GSM Group logo" width={80} height={80} className="block" />
+            <Image src="/images/logo.png" alt="GSM Group logo" width={120} height={120} className="block" />
           </div>
         </Link>
 
@@ -58,7 +59,7 @@ export default function Navbar() {
             aria-label="Toggle menu"
           >
             <span className="material-symbols-outlined">
-              {menuOpen ? 'close' : 'menu'}
+              {menuOpen ? <X /> : <Menu/>}
             </span>
           </button>
         </div>
