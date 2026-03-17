@@ -10,10 +10,6 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/portfolio', label: 'Portfolio' },
-  { href: '/brands/powerlite', label: 'Powerlite AAC' },
-  { href: '/brands/coal', label: 'Coal Division' },
-  { href: '/brands/pavers', label: 'Marak Pavers' },
-  { href: '/brands/roofings', label: 'Power Roofings' },
   { href: '/contact', label: 'Contact' },
 ]
 
@@ -51,8 +47,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <Link
             href="/contact"
-            className="hidden rounded-lg bg-[#1a3b5b] px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-[#1a3b5b]/10 transition-all hover:bg-[#1a3b5b]/90 md:block"
-          >
+            className="hidden rounded-lg bg-[#1a3b5b] px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-[#1a3b5b]/10 transition-all hover:bg-[#1a3b5b]/90 md:block">
             Get in Touch
           </Link>
 

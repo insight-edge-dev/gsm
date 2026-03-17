@@ -2,8 +2,41 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { Mail, MapPin, Phone, Send } from 'lucide-react'
+import { useState } from "react"
 
 export default function ContactPage() {
+
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [phone, setPhone] = useState("")
+  const [message, setMessage] = useState("")
+  const handleSubmit = async (e: any) => {
+    e.preventDefault()
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        phone,
+        message
+      })
+    })
+
+    const data = await res.json()
+
+    if (res.ok) {
+      alert("Message sent successfully")
+      console.log(data)
+    } else {
+      alert("Email failed")
+      console.log(data)
+    }
+  }
   return (
     <>
       {/* Page header */}
@@ -31,12 +64,14 @@ export default function ContactPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div className="flex flex-col gap-2">
                   <label className="text-sm font-bold uppercase tracking-wider text-slate-700">Full Name</label>
                   <input
                     type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     placeholder="John Doe"
                     className="w-full rounded-lg border border-slate-200 bg-white p-4 text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-[#1a3b5b] focus:ring-2 focus:ring-[#1a3b5b]/20"
                   />
@@ -45,6 +80,8 @@ export default function ContactPage() {
                   <label className="text-sm font-bold uppercase tracking-wider text-slate-700">Email Address</label>
                   <input
                     type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     placeholder="john@example.com"
                     className="w-full rounded-lg border border-slate-200 bg-white p-4 text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-[#1a3b5b] focus:ring-2 focus:ring-[#1a3b5b]/20"
                   />
@@ -54,6 +91,8 @@ export default function ContactPage() {
                 <label className="text-sm font-bold uppercase tracking-wider text-slate-700">Phone Number</label>
                 <input
                   type="tel"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
                   placeholder="+91 00000 00000"
                   className="w-full rounded-lg border border-slate-200 bg-white p-4 text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-[#1a3b5b] focus:ring-2 focus:ring-[#1a3b5b]/20"
                 />
@@ -62,6 +101,8 @@ export default function ContactPage() {
                 <label className="text-sm font-bold uppercase tracking-wider text-slate-700">Message</label>
                 <textarea
                   rows={6}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                   placeholder="How can we help you?"
                   className="w-full resize-none rounded-lg border border-slate-200 bg-white p-4 text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-[#1a3b5b] focus:ring-2 focus:ring-[#1a3b5b]/20"
                 />
@@ -73,7 +114,7 @@ export default function ContactPage() {
                 className="flex min-w-[200px] items-center justify-center gap-2 rounded-lg bg-[#1a3b5b] px-8 py-4 font-bold text-white transition-all hover:shadow-lg hover:shadow-[#1a3b5b]/20 md:w-auto"
               >
                 <span>Send Message</span>
-                <span className="material-symbols-outlined text-sm">send</span>
+                <Send className="h-4 w-4" aria-hidden="true" />
               </motion.button>
             </form>
           </motion.div>
@@ -89,24 +130,24 @@ export default function ContactPage() {
             <div className="space-y-8">
               {[
                 {
-                  icon: 'location_on',
+                  icon: MapPin,
                   title: 'Our Location',
                   content: 'GSM Tower, Police Bazar,\nShillong, Meghalaya 793001\nIndia',
                 },
                 {
-                  icon: 'call',
+                  icon: Phone,
                   title: 'Phone Number',
                   content: '+91 (364) 222-4567\n+91 98765 43210',
                 },
                 {
-                  icon: 'mail',
+                  icon: Mail,
                   title: 'Email Address',
                   content: 'contact@gsmgroup.com\nsupport@gsmgroup.in',
                 },
               ].map((d) => (
                 <div key={d.title} className="flex gap-5">
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl border border-slate-100 bg-slate-50 text-[#1a3b5b]">
-                    <span className="material-symbols-outlined">{d.icon}</span>
+                    <d.icon className="h-5 w-5" aria-hidden="true" />
                   </div>
                   <div>
                     <h4 className="mb-1 text-lg font-bold text-slate-900">{d.title}</h4>
@@ -126,7 +167,7 @@ export default function ContactPage() {
               />
               <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
                 <div className="animate-bounce rounded-full bg-[#1a3b5b] p-3 text-white shadow-2xl">
-                  <span className="material-symbols-outlined">location_on</span>
+                  <MapPin className="h-5 w-5" aria-hidden="true" />
                 </div>
               </div>
               <div className="absolute bottom-4 left-4 rounded-lg border border-slate-100 bg-white/95 px-4 py-2 shadow-sm backdrop-blur-md">

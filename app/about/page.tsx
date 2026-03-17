@@ -2,34 +2,35 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { Cpu, Eye, Globe2, History, Rocket, ShieldCheck, Wallet } from 'lucide-react'
 
 const timelineItems = [
   {
     year: '2000',
     title: 'Founding & Coal Trading Genesis',
     body: 'Established as a premier regional energy resource partner with a focus on bulk coal supply chains.',
-    icon: 'history',
+    icon: History,
     side: 'left',
   },
   {
     year: '2008',
     title: 'Strategic Diversification',
     body: 'Expanding into logistics infrastructure and warehouse management systems to support growing trade volumes.',
-    icon: 'account_balance_wallet',
+    icon: Wallet,
     side: 'right',
   },
   {
     year: '2014',
     title: 'Technological Integration',
     body: 'First phase of digital transformation. Implementing SAP systems and IoT monitoring across fleet operations.',
-    icon: 'memory',
+    icon: Cpu,
     side: 'left',
   },
   {
     year: '2018',
     title: 'Regional Expansion',
     body: 'Established new branches across the region, pioneering AAC block manufacturing and premium roofing solutions.',
-    icon: 'public',
+    icon: Globe2,
     side: 'right',
   },
 ]
@@ -65,17 +66,17 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 md:grid-cols-3">
           {[
             {
-              icon: 'rocket_launch',
+              icon: Rocket,
               title: 'Our Mission',
               body: 'To empower regional industries by providing sustainable infrastructure solutions and cutting-edge construction technology that bridges legacy operations with future efficiency.',
             },
             {
-              icon: 'visibility',
+              icon: Eye,
               title: 'Our Vision',
               body: 'To be the benchmark for diversified industrial groups in Northeast India, recognized for integrating ethical resource management with high-quality construction.',
             },
             {
-              icon: 'verified_user',
+              icon: ShieldCheck,
               title: 'Our Values',
               body: 'Integrity in every deal, innovation in every process, and excellence in every partnership. We value our heritage as much as our progress.',
             },
@@ -88,7 +89,7 @@ export default function AboutPage() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.4 }}
             >
-              <span className="material-symbols-outlined text-4xl text-[#1a3b5b]">{card.icon}</span>
+              <card.icon className="h-10 w-10 text-[#1a3b5b]" aria-hidden="true" />
               <h3 className="text-2xl font-bold text-slate-900">{card.title}</h3>
               <p className="leading-relaxed text-slate-600">{card.body}</p>
             </motion.div>
@@ -112,7 +113,7 @@ export default function AboutPage() {
             className="relative h-[400px] overflow-hidden rounded-xl shadow-xl"
             style={{
               backgroundImage:
-                "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCm028GdvwVrE02ljCBZQjl5RjyTpceq6e4h921087Qlv1YzHL6EucKDR2Sc8fCUEQvg1c2uleUW_Wl9m3Xm1Vl5Bjx34FpIR_9hIw4TuqCOXslzVuWRaReVv9betA0jE2eVtTzg7o6xoQuyz5YtaVER_lrHym_9sD1Dnz4mFVz0aS-F_fK4kqlRgYvm1gvLwf-pEz222Mv6wGHjdjpQpstvX_s6D3eDph4IyEQmEovSY24YEyV2NtX44_aNFs_B0C9htTchV_8Vu9k')",
+                "url('/images/home/about.jpeg')",
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}
@@ -157,7 +158,7 @@ export default function AboutPage() {
 
                 {/* Dot */}
                 <div className="absolute left-4 flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full border-4 border-slate-50 bg-[#1a3b5b] z-10 md:left-1/2">
-                  <span className="material-symbols-outlined text-xs text-white">{item.icon}</span>
+                  <item.icon className="h-3.5 w-3.5 text-white" aria-hidden="true" />
                 </div>
 
                 {/* Right content */}

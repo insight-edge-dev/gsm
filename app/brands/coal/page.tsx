@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import { ArrowRight, Check, Clock, Globe, TrendingUp, Users } from 'lucide-react'
 
 export default function CoalPage() {
   return (
@@ -21,12 +22,15 @@ export default function CoalPage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
-              <Link href="/contact" className="rounded-xl bg-[#1a3b5b] px-8 py-4 font-bold text-white transition-all hover:shadow-lg hover:shadow-[#1a3b5b]/20">
+              <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1a3b5b] px-8 py-4 font-bold text-white transition-all hover:shadow-lg hover:shadow-[#1a3b5b]/20">
                 Explore Operations
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
-              <button className="rounded-xl border border-slate-300 px-8 py-4 font-bold text-slate-700 transition-all hover:bg-slate-50">
-                Compliance Reports
-              </button>
+             <Link
+                href="/about"
+                 className="rounded-xl border border-slate-300 px-8 py-4 font-bold text-slate-700 transition-all hover:bg-slate-50">
+                Our Story
+              </Link>
             </div>
           </motion.div>
           <div className="relative">
@@ -50,13 +54,16 @@ export default function CoalPage() {
       <section className="border-y border-slate-200 bg-slate-50 px-6 py-10 md:px-20">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 lg:grid-cols-4">
           {[
-            { label: 'Market Reach', value: 'Regional Hub' },
-            { label: 'Reliability', value: '99.8% On-Time' },
-            { label: 'Client Base', value: '500+ Industrial Units' },
-            { label: 'Legacy', value: 'Est. 2000' },
+            { icon: Globe, label: 'Market Reach', value: 'Regional Hub' },
+            { icon: TrendingUp, label: 'Reliability', value: '99.8% On-Time' },
+            { icon: Users, label: 'Client Base', value: '500+ Industrial Units' },
+            { icon: Clock, label: 'Legacy', value: 'Est. 2000' },
           ].map((s) => (
             <div key={s.label} className="flex flex-col gap-1">
-              <p className="text-sm font-semibold text-slate-500">{s.label}</p>
+              <div className="flex items-center gap-2">
+                <s.icon className="h-5 w-5 text-[#1a3b5b]" aria-hidden="true" />
+                <p className="text-sm font-semibold text-slate-500">{s.label}</p>
+              </div>
               <p className="text-2xl font-bold text-slate-900">{s.value}</p>
             </div>
           ))}
@@ -109,9 +116,6 @@ export default function CoalPage() {
       <section className="border-t border-slate-200 bg-slate-50 px-6 py-20 md:px-20">
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-16 lg:flex-row">
           <div className="space-y-6 lg:w-1/2">
-            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#1a3b5b] text-white">
-              <span className="material-symbols-outlined">eco</span>
-            </div>
             <h2 className="text-3xl font-bold tracking-tight text-slate-900">Environmental Compliance &amp; Ethical Mining</h2>
             <p className="leading-relaxed text-slate-600">
               At GSM Group, we believe that mining legacy comes with immense responsibility. Our operations adhere to strict environmental standards, incorporating dust suppression systems and responsible logistics.
@@ -119,14 +123,11 @@ export default function CoalPage() {
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               {['ISO 14001 Certified', 'Clean Extraction Tech', 'Community Restoration', 'Emission Monitoring'].map((c) => (
                 <div key={c} className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-[#1a3b5b]">check_circle</span>
+                  <Check className="h-5 w-5 text-[#1a3b5b]" aria-hidden="true" />
                   <span className="text-sm font-semibold text-slate-700">{c}</span>
                 </div>
               ))}
             </div>
-            <Link href="/contact" className="inline-block rounded bg-[#1a3b5b] px-6 py-3 font-bold text-white transition-all hover:bg-[#1a3b5b]/90">
-              Download ESG Report 2024
-            </Link>
           </div>
           <div className="lg:w-1/2">
             <div className="grid grid-cols-2 gap-4">

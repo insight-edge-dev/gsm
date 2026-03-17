@@ -64,7 +64,7 @@ export default function Footer() {
 
           {/* Connect */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-widest text-white">Connect</h4>
+            <h4 className="text-sm font-bold uppercase tracking-widest text-white">Locate Us</h4>
             <p className="mt-6 text-sm text-slate-400">
               GSM Tower, Police Bazar,<br />
               Shillong, Meghalaya 793001<br />
